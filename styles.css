@@ -11,35 +11,14 @@ body {
 h1 {
     color: #333;
 }
-
 .container {
-    text-align: center; 
     padding: 20px;
+    text-align: center;
     background: white; 
     border-radius: 8px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-}
-
-.form-container {
-    text-align: center; 
-    padding: 20px;
-    background: white; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin: auto;
     margin-top: 20px;
-
-}
-
-.output-container {
-    text-align: center; 
-    padding: 20px;
-    background: white; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-    margin: auto;
-    margin-top: 20px;
-
 }
 
 label {
@@ -55,7 +34,6 @@ input {
 }
 button {
     padding: 10px 15px;
-    background-color: #4a28a7;
     color: white;
     border: none;
     border-radius: 5px;
