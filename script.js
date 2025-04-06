@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     button.addEventListener('click', function(event) {
         event.preventDefault();
+        
+        
         const name = document.getElementById('name').value;
         const hoursSlept = parseFloat(document.getElementById('hoursSlept').value); 
         const carbs = parseFloat(document.getElementById('carbs').value);
@@ -14,6 +16,50 @@ document.addEventListener('DOMContentLoaded', function() {
         const workout = parseFloat(document.getElementById('workout').value);
         const mood = parseFloat(document.getElementById('mood').value);
         
+        const entry = {
+            "name": name,
+            "sleep": {
+                "actualSleep": hoursSlept,
+                "targetSleep": "",
+                "evaluationSleep": ""
+            },
+            "carbs": {
+                "actualCarbs": carbs,
+                "targetCarbs": "",
+                "evaluationCarbs": ""
+            },
+            "protein": {
+                "actualProtein": protein,
+                "targetProtein": "",
+                "evaluationProtein": ""
+            },
+            "fat": {
+                "actualFat": fat,
+                "targetFat": "",
+                "evaluationProtein": ""
+            },
+            "calories": {
+                "actualCalories": calculateCalories(carbs, protein, fat),
+                "targetCalories": "",
+                "evaluationCalories": ""
+            },
+            "steps": {
+                "actualSteps": steps,
+                "targetSteps": "",
+                "evaluationSteps": ""
+            },
+            "workout": {
+                "actualSteps": workout,
+                "targetSteps": "",
+                "evaluationSteps": ""
+            },
+            "mood": {
+                "actualMood": mood,
+                "targetMood": "",
+                "evaluationMood": ""
+            },
+        }
+
         //Takes Macros and returns a calculated calorie amount
         function calculateCalories (carbs, protein, fat) {
             carbCalories = carbs * 4
