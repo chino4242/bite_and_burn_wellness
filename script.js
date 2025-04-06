@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     button.addEventListener('click', function(event) {
         event.preventDefault();
-
+        const name = document.getElementById('name').value;
         const hoursSlept = parseFloat(document.getElementById('hoursSlept').value); 
         const carbs = parseFloat(document.getElementById('carbs').value);
         const protein = parseFloat(document.getElementById('protein').value);
@@ -23,7 +23,67 @@ document.addEventListener('DOMContentLoaded', function() {
             return totalCalories
         }
         totalCalories = calculateCalories(carbs, protein, fat)
-        // Combine the outputs into a single string
+        profile_array = [
+            name,
+            hoursSlept,
+            carbs,
+            protein,
+            fat,
+            totalCalories,
+            steps,
+            workout,
+            mood
+        ]
+        
+        // Take an array of data from the day and evaluate it against targets. 
+        function evaluateDate(profile_array) {
+            // Checks name and then sets targets
+            if (profile_array[0] === "Papo") {
+                hoursSleptTarget = 6;
+                carbsTarget = 158;
+                proteinTarget = 180;
+                fatTarget = 68;
+                totalCaloriesTarget = 1964;
+                stepsTarget = 10000;
+                workoutTarget = 45;
+                moodTarget = 8;
+
+                //Loop through array and evaluate against targets. Starting at 1 to ignore name
+                for (let i = 1; i <profile_array.length; i++) {
+
+                }
+
+
+            } else if (profile_array[0] === "Mala") {
+                //Checks name and then sets targets
+                hoursSleptTarget = 6;
+                carbsTarget = 158;
+                proteinTarget = 180;
+                fatTarget = 68;
+                totalCaloriesTarget = 1964;
+                stepsTarget = 10000;
+                workoutTarget = 45;
+                moodTarget = 8;
+            }
+        }
+        
+        function evaluateValue(value, target) {
+            if (value >= (.9 * target) && value <= (1.1 * target)) {
+                return "great";
+            } else if (value >= (.8 * target) && value <= (1.2 * target)) {
+                return "good";
+            } else if (value >= (.7 * target) && value <= (1.3 * target)) {
+                return "neutral";
+            } else if (value >= (.6 * target) && value <= (1.4 * target)) {
+                return "bad";
+            } else if (value >= (.5 * target) && value <= (1.5 * target)) {
+                return "very-bad"
+            }
+        }
+
+         // Combine the outputs into a single string.
+         // Eventually I'd like to split this back out per item so we can apply the 
+         // style for each
         document.getElementById('output').innerHTML = `
             Hours Slept: ${hoursSlept}<br>
             Carbs: ${carbs}<br>
@@ -35,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
             Mood: ${mood}
         `;
     });
-
 
 });
 

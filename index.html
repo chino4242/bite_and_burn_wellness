@@ -25,6 +25,13 @@
                     <h1>Daily Data Capture</h1>
                     <form id="dailyForm">
                         <div class="form-group">
+                            <label for="name">Name</label>
+                            <select name="profile" class="form-control" id="name" required>
+                                <option value="mala">Mala</option>
+                                <option value="papo">Papo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label for="hoursSlept">Hours Slept:</label>
                             <input type="number" class="form-control" id="hoursSlept" required>
                         </div>
@@ -65,6 +72,15 @@
                 <div class="output-container bg-white p-4 rounded shadow-sm">
                     <h1>Daily Data Output</h1>
                     <p id="output"></p>
+                    <p id="name_output"></p>
+                    <p id="sleep_output"></p>
+                    <p id="carbs_output"></p>
+                    <p id="protein_output"></p>
+                    <p id="fat_output"></p>
+                    <p id="calories_output"></p>
+                    <p id="steps_output"></p>
+                    <p id="workout_output"></p>
+                    <p id="mood_output"></p>
                 </div>
             </div>
         </div>

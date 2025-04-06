@@ -21,6 +21,10 @@ h1 {
     margin-top: 20px;
 }
 
+select {
+    text-align: center;
+}
+
 label {
     display: block;
     margin: 10px 0 5px;
@@ -43,4 +47,24 @@ button {
 button:hover {
     background-color: #7b66a1;
 
+}
+
+.great {
+    background-color: green;
+}
+
+.good {
+    background-color: lightgreen;
+}
+
+.neutral {
+    background-color: lightyellow;
+}
+
+.bad {
+    background-color: rgb(255, 167, 2);
+}
+
+.very-bad {
+    background-color: rgb(208, 108, 108);
 }
