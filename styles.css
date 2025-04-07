@@ -68,3 +68,7 @@ button:hover {
 .very-bad {
     background-color: rgb(208, 108, 108);
 }
+
+.in-progress {
+    background-color: rgb(103, 197, 229);
+}

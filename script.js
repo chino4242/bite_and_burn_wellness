@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const workout = parseFloat(document.getElementById('workout').value);
         const mood = parseFloat(document.getElementById('mood').value);
         
+        //Initialize entry with actuals. Target and evaluation added later.
         const entry = {
             "name": name,
             "sleep": {
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        //Passes in actual and target and returns the evaluation
         function evaluateValue(actual, target) {
             if (actual >= (.9 * target) && actual <= (1.1 * target)) {
                 return "great";
@@ -131,23 +133,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return "bad";
             } else if (actual >= (.5 * target) && actual <= (1.5 * target)) {
                 return "very-bad"
+            } else {
+                return "in-progress"
             }
         }
 
-         // Combine the outputs into a single string.
-         // Eventually I'd like to split this back out per item so we can apply the 
-         // style for each
-        document.getElementById('output').innerHTML = `
-            Hours Slept: ${hoursSlept}<br>
-            Carbs: ${carbs}<br>
-            Protein: ${protein}<br>
-            Fat: ${fat}<br>
-            Calories: ${totalCalories}<br>
-            Steps: ${steps}<br>
-            Workout: ${workout}<br>
-            Mood: ${mood}
-        `;
         evaluateDate(entry)
+        
+        //Print and style data onto page
         document.getElementById('sleep_output').innerHTML = `Hours Slept: ${entry.sleep.actualSleep}`;
         document.getElementById('sleep_output').classList.add(entry.sleep.evaluationSleep);
         document.getElementById('carbs_output').innerHTML = `Carbs: ${entry.carbs.actualCarbs}`;
