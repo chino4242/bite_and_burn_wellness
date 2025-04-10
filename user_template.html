@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bite and Burn User Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="user_template.html">User Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tbd">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tbd">Trends</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <!-- User Profile Form -->
+
+    <div class="container mt-5">
+        <div id="profileForm" class="border p-4 rounded">
+            <h2>User Profile</h2>
+            <form>
+                <div class="form-group">
+                    <label for="profileName">Name</label>
+                    <input type="text" id="profileName" class="form-control" placeholder="Enter your name" required />
+                </div>
+                <div class="form-group">
+                    <label for="targetSleep">Target Sleep (hours)</label>
+                    <input type="number" id="targetSleep" class="form-control" placeholder="Target Sleep (hours)" />
+                </div>
+                <div class="form-group">
+                    <label for="targetCarbs">Target Carbs (grams)</label>
+                    <input type="number" id="targetCarbs" class="form-control" placeholder="Target Carbs (grams)" />
+                </div>
+                <div class="form-group">
+                    <label for="targetProtein">Target Protein (grams)</label>
+                    <input type="number" id="targetProtein" class="form-control" placeholder="Target Protein (grams)" />
+                </div>
+                <div class="form-group">
+                    <label for="targetFat">Target Fat (grams)</label>
+                    <input type="number" id="targetFat" class="form-control" placeholder="Target Fat (grams)" />
+                </div>
+                <div class="form-group">
+                    <label for="targetWater">Target Water (liters)</label>
+                    <input type="number" id="targetWater" class="form-control" placeholder="Target Water (liters)" />
+                </div>
+                <div class="form-group">
+                    <label for="targetSteps">Target Steps</label>
+                    <input type="number" id="targetSteps" class="form-control" placeholder="Target Steps" />
+                </div>
+                <div class="form-group">
+                    <label for="targetWorkout">Target Workout (minutes)</label>
+                    <input type="number" id="targetWorkout" class="form-control" placeholder="Target Workout (minutes)" />
+                </div>
+                <div class="form-group">
+                    <label for="targetMood">Target Mood (1-10)</label>
+                    <input type="number" id="targetMood" class="form-control" placeholder="Target Mood (1-10)" />
+                </div>
+                <button type="submit" id="saveProfile" class="btn btn-primary">Save Profile</button>
+            </form>
+        </div>
+        <div id="output" class="mt-4"></div>
+    </div>
+    
+</body>
+</html>
