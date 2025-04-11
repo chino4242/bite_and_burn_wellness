@@ -1,165 +1,83 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const button = document.getElementById('submit');
 
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function (event) {
         event.preventDefault();
+
+        const getInputValue = (id) => parseFloat(document.getElementById(id).value);
         
-        const name = document.getElementById('name').value;
-        const hoursSlept = parseFloat(document.getElementById('hoursSlept').value); 
-        const carbs = parseFloat(document.getElementById('carbs').value);
-        const protein = parseFloat(document.getElementById('protein').value);
-        const fat = parseFloat(document.getElementById('fat').value);
-        const water = parseFloat(document.getElementById('water').value);
-        let totalCalories = 0;
-        const steps = parseFloat(document.getElementById('steps').value);
-        const workout = parseFloat(document.getElementById('workout').value);
-        const mood = parseFloat(document.getElementById('mood').value);
-        
-        //Initialize entry with actuals. Target and evaluation added later.
         const entry = {
-            "name": name,
-            "sleep": {
-                "actualSleep": hoursSlept,
-                "targetSleep": "",
-                "evaluationSleep": ""
-            },
-            "carbs": {
-                "actualCarbs": carbs,
-                "targetCarbs": "",
-                "evaluationCarbs": ""
-            },
-            "protein": {
-                "actualProtein": protein,
-                "targetProtein": "",
-                "evaluationProtein": ""
-            },
-            "fat": {
-                "actualFat": fat,
-                "targetFat": "",
-                "evaluationFat": ""
-            },
-            "calories": {
-                "actualCalories": calculateCalories(carbs, protein, fat),
-                "targetCalories": "",
-                "evaluationCalories": ""
-            },
-            "water": {
-                "actualWater": water,
-                "targetWater": "",
-                "evaluationWater": ""
-            },
-            "steps": {
-                "actualSteps": steps,
-                "targetSteps": "",
-                "evaluationSteps": ""
-            },
-            "workout": {
-                "actualWorkout": workout,
-                "targetWorkout": "",
-                "evaluationWorkout": ""
-            },
-            "mood": {
-                "actualMood": mood,
-                "targetMood": "",
-                "evaluationMood": ""
-            },
-        }
+            name: document.getElementById('name').value,
+            sleep: { actual: getInputValue('hoursSlept') },
+            carbs: { actual: getInputValue('carbs') },
+            protein: { actual: getInputValue('protein') },
+            fat: { actual: getInputValue('fat') },
+            water: { actual: getInputValue('water') },
+            steps: { actual: getInputValue('steps') },
+            workout: { actual: getInputValue('workout') },
+            mood: { actual: getInputValue('mood') },
+        };
 
-        //Takes Macros and returns a calculated calorie amount
-        function calculateCalories (carbs, protein, fat) {
-            carbCalories = carbs * 4
-            proteinCalories = protein * 4
-            fatCalories = fat * 9
-            totalCalories = carbCalories + proteinCalories + fatCalories
-            return totalCalories
-        }
-        totalCalories = calculateCalories(carbs, protein, fat)
-        
-        // Take an array of data from the day and evaluate it against targets. 
-        function evaluateDate(entry) {
-            // Checks name and then sets targets
-            if (entry.name === "papo") {
-                entry.sleep.targetSleep = 7;
-                entry.sleep.evaluationSleep = evaluateValue(entry.sleep.actualSleep, entry.sleep.targetSleep);
-                entry.carbs.targetCarbs = 158;
-                entry.carbs.evaluationCarbs = evaluateValue(entry.carbs.actualCarbs, entry.carbs.targetCarbs);
-                entry.protein.targetProtein= 180;
-                entry.protein.evaluationProtein= evaluateValue(entry.protein.actualProtein, entry.protein.targetProtein);
-                entry.fat.targetFat = 68;
-                entry.fat.evaluationFat = evaluateValue(entry.fat.actualFat,entry.fat.targetFat);
-                entry.calories.targetCalories = 1964;
-                entry.calories.evaluationCalories = evaluateValue(entry.calories.actualCalories, entry.calories.targetCalories);
-                entry.water.targetWater = 100;
-                entry.water.evaluationWater = evaluateValue(entry.water.actualWater, entry.water.targetWater);
-                entry.steps.targetSteps = 10000;
-                entry.steps.evaluationSteps = evaluateValue(entry.steps.actualSteps, entry.steps.targetSteps)
-                entry.workout.targetWorkout = 45;
-                entry.workout.evaluationWorkout = evaluateValue(entry.workout.actualWorkout,entry.workout.targetWorkout);
-                entry.mood.targetMood = 8;
-                entry.mood.evaluationMood = evaluateValue(entry.mood.actualMood, entry.mood.targetMood);
-
-            } else if (entry.name === "mala") {
-                //Checks name and then sets targets
-                entry.sleep.targetSleep = 7;
-                entry.sleep.evaluationSleep = evaluateValue(entry.sleep.actualSleep, entry.sleep.targetSleep);
-                entry.carbs.targetCarbs = 158;
-                entry.carbs.evaluationCarbs = evaluateValue(entry.carbs.actualCarbs, entry.carbs.targetCarbs);
-                entry.protein.targetProtein= 180;
-                entry.protein.evaluationProtein= evaluateValue(entry.protein.actualProtein, entry.protein.targetProtein);
-                entry.fat.targetFat = 68;
-                entry.fat.evaluationFat = evaluateValue(entry.fat.actualFat,entry.fat.targetFat);
-                entry.calories.targetCalories = 1964;
-                entry.calories.evaluationCalories = evaluateValue(entry.calories.actualCalories, entry.calories.targetCalories);
-                entry.water.targetWater = 100;
-                entry.water.evaluationWater = evaluateValue(entry.water.actualWater, entry.water.targetWater);
-                entry.steps.targetSteps = 10000;
-                entry.steps.evaluationSteps = evaluateValue(entry.steps.actualSteps, entry.steps.targetSteps)
-                entry.workout.targetWorkout = 45;
-                entry.workout.evaluationWorkout = evaluateValue(entry.workout.actualWorkout,entry.workout.targetWorkout);
-                entry.mood.targetMood = 8;
-                entry.mood.evaluationMood = evaluateValue(entry.mood.actualMood, entry.mood.targetMood);
+        const targetValues = {
+            papo: {
+                sleep: 7,
+                carbs: 158,
+                protein: 180,
+                fat: 68,
+                calories: 1964,
+                water: 100,
+                steps: 10000,
+                workout: 45,
+                mood: 8,
+            },
+            mala: {
+                sleep: 7,
+                carbs: 158,
+                protein: 180,
+                fat: 68,
+                calories: 1964,
+                water: 100,
+                steps: 10000,
+                workout: 45,
+                mood: 8,
             }
-        }
-        
-        //Passes in actual and target and returns the evaluation
-        function evaluateValue(actual, target) {
-            if (actual >= (.9 * target) && actual <= (1.1 * target)) {
-                return "great";
-            } else if (actual >= (.8 * target) && actual <= (1.2 * target)) {
-                return "good";
-            } else if (actual >= (.7 * target) && actual <= (1.3 * target)) {
-                return "neutral";
-            } else if (actual >= (.6 * target) && actual <= (1.4 * target)) {
-                return "bad";
-            } else if (actual >= (.5 * target) && actual <= (1.5 * target)) {
-                return "very-bad"
-            } else {
-                return "in-progress"
-            }
-        }
+        };
 
-        evaluateDate(entry)
+        const profile = targetValues[entry.name] || targetValues['mala']; // Defaulting to mala if name is not found
+
+        // Calculate total calories
+        const calculateCalories = (carbs, protein, fat) => (carbs * 4) + (protein * 4) + (fat * 9);
         
-        //Print and style data onto page
-        document.getElementById('sleep_output').innerHTML = `Hours Slept: ${entry.sleep.actualSleep}`;
-        document.getElementById('sleep_output').classList.add(entry.sleep.evaluationSleep);
-        document.getElementById('carbs_output').innerHTML = `Carbs: ${entry.carbs.actualCarbs}`;
-        document.getElementById('carbs_output').classList.add(entry.carbs.evaluationCarbs);
-        document.getElementById('protein_output').innerHTML = `Protein: ${entry.protein.actualProtein}`;
-        document.getElementById('protein_output').classList.add(entry.protein.evaluationProtein);
-        document.getElementById('fat_output').innerHTML = `Fat: ${entry.fat.actualFat}`;
-        document.getElementById('fat_output').classList.add(entry.fat.evaluationFat);
-        document.getElementById('calories_output').innerHTML = `Calories: ${entry.calories.actualCalories}`;
-        document.getElementById('calories_output').classList.add(entry.calories.evaluationCalories);
-        document.getElementById('water_output').innerHTML = `Water: ${entry.water.actualWater}`;
-        document.getElementById('water_output').classList.add(entry.water.evaluationWater);
-        document.getElementById('steps_output').innerHTML = `Steps: ${entry.steps.actualSteps}`;
-        document.getElementById('steps_output').classList.add(entry.steps.evaluationSteps);
-        document.getElementById('workout_output').innerHTML = `Workout: ${entry.workout.actualWorkout}`;
-        document.getElementById('workout_output').classList.add(entry.workout.evaluationWorkout);
-        document.getElementById('mood_output').innerHTML = `Mood: ${entry.mood.actualMood}`;
-        document.getElementById('mood_output').classList.add(entry.mood.evaluationMood);
+        const calories = calculateCalories(entry.carbs.actual, entry.protein.actual, entry.fat.actual);
+        entry.calories = { actual: calories };
+
+        // Evaluate and set targets
+        const evaluateEntry = (entry, profile) => {
+            for (const key in profile) {
+                if (entry[key]) {
+                    entry[key].target = profile[key];
+                    entry[key].evaluation = evaluateValue(entry[key].actual, profile[key]);
+                }
+            }
+        };
+
+        const evaluateValue = (actual, target) => {
+            const ratio = actual / target;
+            if (ratio >= 0.9 && ratio <= 1.1) return "great";
+            if (ratio >= 0.8 && ratio <= 1.2) return "good";
+            if (ratio >= 0.7 && ratio <= 1.3) return "neutral";
+            if (ratio >= 0.6 && ratio <= 1.4) return "bad";
+            if (ratio >= 0.5 && ratio <= 1.5) return "very-bad";
+            return "in-progress";
+        };
+
+        evaluateEntry(entry, profile);
+
+        // Print and style data onto page
+        const outputKeys = ['sleep', 'carbs', 'protein', 'fat', 'calories', 'water', 'steps', 'workout', 'mood'];
+        outputKeys.forEach(key => {
+            document.getElementById(`${key}_output`).innerHTML = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${entry[key].actual}`;
+            document.getElementById(`${key}_output`).classList.add(entry[key].evaluation);
+        });
     });
-
 });
-
