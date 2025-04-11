@@ -51,24 +51,37 @@ button:hover {
 
 .great {
     background-color: green;
+    color: white;
+    border: 2px solid darkgreen;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .good {
     background-color: lightgreen;
+    border: 2px solid green;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .neutral {
     background-color: lightyellow;
+    border: 2px solid gold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .bad {
     background-color: rgb(255, 167, 2);
+    border: 2px solid darkorange;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .very-bad {
     background-color: rgb(208, 108, 108);
+    border: 2px solid darkred;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .in-progress {
     background-color: rgb(103, 197, 229);
+    border: 2px solid steelblue;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
