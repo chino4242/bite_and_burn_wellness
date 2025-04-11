@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 entry.mood.targetMood = 8;
                 entry.mood.evaluationMood = evaluateValue(entry.mood.actualMood, entry.mood.targetMood);
 
-            } else if (profile_array[0] === "mala") {
+            } else if (entry.name === "mala") {
                 //Checks name and then sets targets
                 entry.sleep.targetSleep = 7;
                 entry.sleep.evaluationSleep = evaluateValue(entry.sleep.actualSleep, entry.sleep.targetSleep);
