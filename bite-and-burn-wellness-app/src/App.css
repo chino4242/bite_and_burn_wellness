@@ -1,0 +1,87 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: #796e8c;
+}
+
+h1 {
+    color: #333;
+}
+.container {
+    padding: 20px;
+    text-align: center;
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-top: 20px;
+}
+
+select {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+button {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #7b66a1;
+
+}
+
+.great {
+    background-color: green;
+    color: white;
+    border: 2px solid darkgreen;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.good {
+    background-color: lightgreen;
+    border: 2px solid green;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.neutral {
+    background-color: lightyellow;
+    border: 2px solid gold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bad {
+    background-color: rgb(255, 167, 2);
+    border: 2px solid darkorange;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.very-bad {
+    background-color: rgb(208, 108, 108);
+    border: 2px solid darkred;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.in-progress {
+    background-color: rgb(103, 197, 229);
+    border: 2px solid steelblue;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
