@@ -1,4 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+const [hoursSlept, setHoursSlept] = useState("");
+const [carbs, setCarbs] = useState("");
+const [protein, setProtein] = useState("");
+const [fat, setFat] = useState("");
+const [water, setWater] = useState("");
+const [steps, setSteps] = useState("");
+const [workout, setWorkout] = useState("");
+const [mood, setMood] = useState("");
 
 function Capture() {
     return (
@@ -32,7 +41,7 @@ function Capture() {
                                 <input type="number" class="form-control" id="fat" required />
                             </div>
                             <div class="form-group">
-                                <label for="calories">Water (oz):</label>
+                                <label for="water">Water (oz):</label>
                                 <input type="number" class="form-control" id="water" required />
                             </div>
                             <div class="form-group">
