@@ -13,7 +13,7 @@ function Capture() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Do whatever you want with the data, for example:
+
         const formData = {
             profile,
             hoursSlept,
