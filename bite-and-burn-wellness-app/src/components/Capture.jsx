@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function Capture() {
-    // Move useState hooks inside the component
     const [hoursSlept, setHoursSlept] = useState("");
     const [carbs, setCarbs] = useState("");
     const [protein, setProtein] = useState("");
@@ -10,9 +9,8 @@ function Capture() {
     const [steps, setSteps] = useState("");
     const [workout, setWorkout] = useState("");
     const [mood, setMood] = useState("");
-    const [profile, setProfile] = useState("mala"); // For the select
+    const [profile, setProfile] = useState("mala");
 
-    // Form submit handler
     const handleSubmit = (e) => {
         e.preventDefault();
         // Do whatever you want with the data, for example:
@@ -28,7 +26,7 @@ function Capture() {
             mood,
         };
         console.log(formData);
-        // You can reset the form here if needed
+        
     };
 
     return (
