@@ -21,8 +21,8 @@ function App() {
       <div>
         <Header />
         <Navbar />
-        <Capture />
-        <Output />
+        <Capture onDataSubmit={handleDataCapture} />
+        <Output data ={submittedData} />
       </div>
     </>
   )
