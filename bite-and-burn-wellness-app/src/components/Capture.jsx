@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Capture() {
+function Capture({onDataSubmit}) {
     const [hoursSlept, setHoursSlept] = useState("");
     const [carbs, setCarbs] = useState("");
     const [protein, setProtein] = useState("");
@@ -25,7 +25,7 @@ function Capture() {
             workout,
             mood,
         };
-        console.log(formData);
+        onDataSubmit(formData);
         
     };
 

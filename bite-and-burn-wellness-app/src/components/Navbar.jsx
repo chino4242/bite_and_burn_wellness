@@ -24,6 +24,9 @@ function Navbar() {
                 <li class="nav-item">
                     <a class="nav-link" href="tbd">Fitness Targets</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tbd">Journal</a>
+                </li>
             </ul>
         </div>
     </div>
