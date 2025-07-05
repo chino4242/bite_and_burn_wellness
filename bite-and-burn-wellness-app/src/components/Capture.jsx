@@ -9,6 +9,7 @@ function Capture({onDataSubmit}) {
     const [steps, setSteps] = useState("");
     const [workout, setWorkout] = useState("");
     const [mood, setMood] = useState("");
+    const [alcohol, setAlcohol] = useState("");
     const [profile, setProfile] = useState("mala");
 
     const handleSubmit = (e) => {
@@ -24,6 +25,7 @@ function Capture({onDataSubmit}) {
             steps,
             workout,
             mood,
+            alcohol
         };
         onDataSubmit(formData);
         
@@ -125,6 +127,17 @@ function Capture({onDataSubmit}) {
                                     required
                                     value={workout}
                                     onChange={(e) => setWorkout(e.target.value)}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="alcohol">Alcoholic drinks consumed: </label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    id="alcohol"
+                                    required
+                                    value={alcohol}
+                                    onChange={(e) => setAlcohol(e.target.value)}
                                 />
                             </div>
                             <div className="form-group">

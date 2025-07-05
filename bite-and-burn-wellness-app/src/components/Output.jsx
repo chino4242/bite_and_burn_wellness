@@ -20,6 +20,7 @@ function Output({data}) {
                         <li>Water (oz): {data.water}</li>
                         <li>Steps: {data.steps}</li>
                         <li>Workout (minutes): {data.workout}</li>
+                        <li>Alcoholic drinks consumed: {data.alcohol}</li>
                         <li>Mood/Mindset Rating (1-10): {data.mood}</li>
                     </ul>
                 </div>
