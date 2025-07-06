@@ -7,8 +7,8 @@ function Output({data}) {
     const capitalizedProfile = data.profile.charAt(0).toUpperCase() + data.profile.slice(1);
     const totalCalories = (data.fat * 9) + (data.carbs * 4) + (data.protein * 4)
     return (
-        <div class="col-md-6">
-                <div class="output-container bg-white p-4 rounded shadow-sm">
+        <div className="col-md-4">
+                <div className="output-container bg-white p-4 rounded shadow-sm">
                     <h2>Daily Data Output</h2>
                     <ul>
                         <li>Profile: {capitalizedProfile}</li>

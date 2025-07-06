@@ -11,6 +11,7 @@ const dailyEntrySchema = new mongoose.Schema({
     water: Number,
     steps: Number,
     workout: Number,
+    alcohol: Number,
     mood: Number
 });
 
